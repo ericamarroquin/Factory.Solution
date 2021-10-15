@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer;
+@model Factory.Models.Machine;
 
-<h2>Delete this engineer?</h2>
+<h2>Delete this machine?</h2>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
 @using (Html.BeginForm())
@@ -15,5 +15,5 @@
 <br>
 
 <button>
-@Html.ActionLink("Back to all engineers", "Index")
+@Html.ActionLink("Back to all machines", "Index")
 </button>
