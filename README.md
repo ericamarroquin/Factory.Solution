@@ -36,28 +36,19 @@ This application will allow a user to keep track of machines at a factory and th
 ```json
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=erica_marroquin;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+      "DefaultConnection": "Server=localhost;Port=3306;database=erica-marroquin;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
 
-### Importing the database in MySQL
-* Launch the MySQL server in your terminal by running the command `mySql -u[YOUR-USERNAME-HERE] -p[YOUR-PASSWORD-HERE]` and changing to your unique MySQL username and password, as above
-* Import the database, found in the Factory.Solution folder as `erica_marroquin.sql`
-  - Open MySQL Workbench
-  - Select preferred server
-  - In the "Navigator > Administration" window, select "Data Import/Restore"
-  - In "Import Options" select "Import From Self-Contained File"
-  - Navigate to "Factory.Solution/erica_marroquin.sql"
-  - Under "Default Schema to be Imported To" select the "New" button
-  - Enter the name of the database as "erica_marroquin" and click "Ok"
-    - The name of the database can be different, but the name should then match the database name in `appsettings.json` 
-  - Navigate to tab "Import Progress" and click "Start Import"
-  - Refresh the schema in the "Navigator > Schemas" tab and the new database will appear
+### Create and update database
+* Navigate to Factory.Solution/Factory
+* Run the command `dotnet restore` to install all necessary packages
+* Run the command `dotnet ef database update`
+  - This will use the already existing "Migrations" folder to create the database
 
 ### Running the application
 * To run the application, navigate to Factory.Solution/Factory
-  - Run the command `dotnet restore` to install all necessary packages
   - Run the command `dotnet run`
   - If a host does not automatically show in your browser, enter, in your browser, the URL given in the console message when starting `dotnet run` from the previous step
 
